@@ -33,7 +33,7 @@ body .button_up:after {
   right: 0;
   margin: auto; }
 body .button_up:hover {
-  background: rgba(30, 24, 41, 0.719); }
+  box-shadow: -1px -1px 18px 1px rgba(0, 0, 0, 0.75); }
 
 .conteiner {
   width: 1200px;
@@ -73,6 +73,9 @@ section {
   background-color: #5f5f12;
   padding: 70px;
   text-align: center; }
+  section .video_1 {
+    display: flex;
+    justify-content: space-around; }
 
 footer {
   padding: 70px;
@@ -85,6 +88,8 @@ footer {
     font-size: 35px;
     margin-left: 10px; }
   footer .f_icons i {
-    color: #f5f508; }
+    color: #5a5a37; }
+  footer .f_icons i:hover {
+    color: #a6a823; }
 
 /*# sourceMappingURL=style.css.map */
