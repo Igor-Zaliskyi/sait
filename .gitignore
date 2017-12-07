@@ -1,0 +1,12 @@
+#folder src
+css/style.css.map
+
+
+dist/script.js
+
+node_modules/
+
+*.json
+
+.sass-cache/19cc973c0b273d15ce7537b8c47315437312cf1d
+
