@@ -1,0 +1,29 @@
+{
+  "name": "sait",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Igor-Zaliskyi/sait.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Igor-Zaliskyi/sait/issues"
+  },
+  "homepage": "https://github.com/Igor-Zaliskyi/sait#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-htmlincluder": "^0.1.0",
+    "gulp-inject": "^4.3.0",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sync": "^0.1.4"
+  }
+}
