@@ -1,12 +1,13 @@
 // Змінні
-$but_up_shadow:-1px -1px 18px 1px rgba(0, 0, 0, 0.75);
+$but_up_shadow: -1px -1px 18px 1px rgba(0, 0, 0, 0.75);
 $heager_backg: url(../images/3.jpg) no-repeat center top / cover;
 $font-size: 16px;
 $main_bg_color: rgb(150, 31, 31);
 // End veribel
-@import 'reset'; // зброс стилів 
+@import 'reset'; // зброс стилів
 @import 'header';
 @import 'mixin'; // prefix
+
 body {
     .button_up {
         position: fixed;
