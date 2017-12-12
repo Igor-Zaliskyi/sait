@@ -27,6 +27,7 @@ const distination = {
 // SASS
 gulp.task('sass', () => {
     return gulp.src(source.sass)
+    // add sourcemap
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(distination.css))
         .pipe(connect.reload())
@@ -35,6 +36,8 @@ gulp.task('sass', () => {
 // JS
 gulp.task('scripts', () => {
     return gulp.src(source.scripts)
+    // add babel
+    // add sourcemap
         .pipe(gulp.dest(distination.scripts))
         .pipe(connect.reload())
 })
@@ -55,11 +58,12 @@ gulp.task('public', () => {
 
 // HTML
 gulp.task('html', () => {
-    const target = gulp.src(source.html)
     const injectAssets = gulp.src([distination.css + '/*.*', distination.scripts + '/*.*'], { read: false })
     const injectViews = gulp.src([source.views])
-    return target
+    return gulp.src(source.html)
         .pipe(inject(injectAssets, {
+            // baseDistination === './dist/'
+            // baseDistination.replace(/\.(.*)/, '$1') === '/dist/'
             ignorePath: baseDistination.replace(/\.(.*)/, '$1')
         }))
         .pipe(inject(injectViews, {
