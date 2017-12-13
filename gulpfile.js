@@ -6,6 +6,8 @@ const gulpsync = require('gulp-sync')(gulp)
 const inject = require('gulp-inject')
 const rimraf = require('gulp-rimraf')
 const connect = require('gulp-connect')
+const babel = require('gulp-babel')
+const sourcemaps  = require ('gulp-sourcemaps')
 
 const baseSource = './src/'
 const baseDistination = './dist/'
@@ -27,8 +29,9 @@ const distination = {
 // SASS
 gulp.task('sass', () => {
     return gulp.src(source.sass)
-    // add sourcemap
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(distination.css))
         .pipe(connect.reload())
 })
@@ -36,9 +39,10 @@ gulp.task('sass', () => {
 // JS
 gulp.task('scripts', () => {
     return gulp.src(source.scripts)
-    // add babel
-    // add sourcemap
+        .pipe(sourcemaps.init())
+        .pipe(babel({presets: ['env']}))
         .pipe(gulp.dest(distination.scripts))
+        .pipe(sourcemaps.write())
         .pipe(connect.reload())
 })
 
