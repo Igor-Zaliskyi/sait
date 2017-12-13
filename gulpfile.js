@@ -49,12 +49,6 @@ gulp.task('scripts', () => {
         .pipe(gulp.dest(distination.scripts))
         .pipe(buffer())
         .pipe(connect.reload())
-    // return gulp.src(source.scripts)
-    //     .pipe(sourcemaps.init())
-    //     .pipe(babel({ presets: ['env'] }))
-    //     .pipe(gulp.dest(distination.scripts))
-    //     .pipe(sourcemaps.write())
-    //     .pipe(connect.reload())
 })
 
 // IMAGES

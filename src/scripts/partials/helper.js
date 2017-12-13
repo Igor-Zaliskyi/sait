@@ -1,1 +1,1 @@
-export const someString = 'Some String';
+export default 'Some string'
