@@ -39,7 +39,6 @@ gulp.task('sass', () => {
 // JS
 gulp.task('scripts', () => {
     return gulp.src(source.scripts)
-        // add sourcemap
         .pipe(sourcemaps.init())
         .pipe(babel({presets: ['env']}))
         .pipe(gulp.dest(distination.scripts))
