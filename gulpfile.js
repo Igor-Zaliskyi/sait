@@ -29,7 +29,6 @@ const distination = {
 // SASS
 gulp.task('sass', () => {
     return gulp.src(source.sass)
-    // add sourcemap
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
