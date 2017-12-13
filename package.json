@@ -16,9 +16,13 @@
     "url": "https://github.com/Igor-Zaliskyi/sait/issues"
   },
   "homepage": "https://github.com/Igor-Zaliskyi/sait#readme",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
     "gulp-connect": "^5.0.0",
     "gulp-htmlincluder": "^0.1.0",
     "gulp-inject": "^4.3.0",
