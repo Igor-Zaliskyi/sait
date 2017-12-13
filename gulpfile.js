@@ -6,13 +6,17 @@ const gulpsync = require('gulp-sync')(gulp)
 const inject = require('gulp-inject')
 const rimraf = require('gulp-rimraf')
 const connect = require('gulp-connect')
-const babel = require('gulp-babel')
-const sourcemaps  = require ('gulp-sourcemaps')
+const sourcemaps = require('gulp-sourcemaps')
+const babelify = require('babelify')
+const browserify = require('browserify')
+const sourceStream = require('vinyl-source-stream')
+const buffer = require('vinyl-buffer')
 
 const baseSource = './src/'
 const baseDistination = './dist/'
 const source = {
     sass:    `${baseSource}sass/**/*.scss`,
+    indexJS: `${baseSource}scripts/index.js`,
     scripts: `${baseSource}scripts/**/*.js`,
     images:  `${baseSource}images/**/*.*`,
     html:    `${baseSource}index.html`,
@@ -38,12 +42,19 @@ gulp.task('sass', () => {
 
 // JS
 gulp.task('scripts', () => {
-    return gulp.src(source.scripts)
-        .pipe(sourcemaps.init())
-        .pipe(babel({presets: ['env']}))
+    return browserify([source.indexJS])
+        .transform(babelify, { presets: ['es2015'] })
+        .bundle()
+        .pipe(sourceStream('bundle.js'))
         .pipe(gulp.dest(distination.scripts))
-        .pipe(sourcemaps.write())
+        .pipe(buffer())
         .pipe(connect.reload())
+    // return gulp.src(source.scripts)
+    //     .pipe(sourcemaps.init())
+    //     .pipe(babel({ presets: ['env'] }))
+    //     .pipe(gulp.dest(distination.scripts))
+    //     .pipe(sourcemaps.write())
+    //     .pipe(connect.reload())
 })
 
 // IMAGES
