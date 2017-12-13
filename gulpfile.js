@@ -7,7 +7,7 @@ const inject = require('gulp-inject')
 const rimraf = require('gulp-rimraf')
 const connect = require('gulp-connect')
 const babel = require('gulp-babel')
-const sourcemaps  = require ( ' gulp-sourcemaps ' ) 
+const sourcemaps  = require ('gulp-sourcemaps')
 
 const baseSource = './src/'
 const baseDistination = './dist/'
@@ -42,7 +42,7 @@ gulp.task('scripts', () => {
     return gulp.src(source.scripts)
         // add sourcemap
         .pipe(sourcemaps.init())
-        // .pipe(babel({presets: ['env']}))
+        .pipe(babel({presets: ['env']}))
         .pipe(gulp.dest(distination.scripts))
         .pipe(sourcemaps.write())
         .pipe(connect.reload())

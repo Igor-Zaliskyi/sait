@@ -21,8 +21,6 @@ function scrollToTop() {
     }
 }
 
-
-
 // const y = document.querySelector('body .button_up').style.opacity = "0";
 
 // function top(){
