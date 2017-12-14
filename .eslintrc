@@ -1,0 +1,24 @@
+{
+  "parser": "babel-eslint",
+  "extends": [
+    "standard"
+  ],
+  "plugins": [
+    "babel"
+  ],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "__DEV__": false,
+    "__PROD__": false,
+    "$": false,
+    "jQuery": false
+  },
+  "rules": {
+    "one-var": 0,
+    "indent": 0,
+    "key-spacing": 0,
+    "import/no-duplicates": 0
+  }
+}

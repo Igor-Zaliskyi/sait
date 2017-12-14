@@ -7,28 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BELZ</title>
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
-    <!-- jQuery -->
-    <script src="//code.jquery.com/jquery-3.2.1.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
-    
-    
-    <!-- inject:css -->
-    <!-- endinject -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <!-- inject:views/header.html -->
-    <!-- endinject -->
-    <!-- inject:views/main.html -->
-    <!-- endinject -->
-    <!-- inject:views/footer.html -->
-    <!-- endinject -->
-    <button class="button_up"></button>
-    
-    <!-- inject:js -->
-    <!-- endinject -->
+    <%= require('html-loader!./views/header.html') %>
+    <%= require('html-loader!./views/main.html') %>
+    <%= require('html-loader!./views/footer.html') %>
 </body>
 
 </html>
